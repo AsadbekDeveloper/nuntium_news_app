@@ -35,11 +35,11 @@ class _YourFavoriteScreenState extends State<YourFavoriteScreen> {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            SizedBox(
+            const SizedBox(
               height: 72,
             ),
-            Padding(
-              padding: const EdgeInsets.symmetric(vertical: 8.0),
+            const Padding(
+              padding: EdgeInsets.symmetric(vertical: 8.0),
               child: Text(
                 "Select your favorite topics",
                 style: TextStyle(
@@ -48,7 +48,7 @@ class _YourFavoriteScreenState extends State<YourFavoriteScreen> {
                     color: AppColor.blackPrimary),
               ),
             ),
-            Text(
+            const Text(
               "Select some of your favorite topics to let us suggest better news for you.",
               style: TextStyle(
                 fontSize: 16,
@@ -56,10 +56,10 @@ class _YourFavoriteScreenState extends State<YourFavoriteScreen> {
                 color: AppColor.greyPrimary,
               ),
             ),
-            SizedBox(height: 24),
+            const SizedBox(height: 24),
             GridView.builder(
               shrinkWrap: true,
-              gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+              gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
                   crossAxisCount: 2, mainAxisExtent: 90),
               itemCount: favorites.length,
               itemBuilder: (context, index) {
@@ -71,8 +71,8 @@ class _YourFavoriteScreenState extends State<YourFavoriteScreen> {
                   },
                   child: Container(
                     alignment: Alignment.center,
-                    margin: EdgeInsets.symmetric(vertical: 8, horizontal: 4),
-                    padding: EdgeInsets.symmetric(vertical: 16, horizontal: 10),
+                    margin: const EdgeInsets.symmetric(vertical: 8, horizontal: 4),
+                    padding: const EdgeInsets.symmetric(vertical: 16, horizontal: 10),
                     decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(12),
                         color: favorites[index].enabled
@@ -92,26 +92,26 @@ class _YourFavoriteScreenState extends State<YourFavoriteScreen> {
                 );
               },
             ),
-            SizedBox(
+            const SizedBox(
               height: 10,
             ),
             ElevatedButton(
               onPressed: () {
-                Get.to(()=>HomeScreen());
+                Get.to(()=>const HomeScreen());
               },
-              child: Text(
-                "Next",
-                style: TextStyle(
-                  fontSize: 16,
-                  fontWeight: FontWeight.bold,
-                ),
-              ),
               style: ElevatedButton.styleFrom(
                 fixedSize: Size(size.width * 0.9, 50),
                 shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(12),
                 ),
                 backgroundColor: AppColor.purplePrimary,
+              ),
+              child: const Text(
+                "Next",
+                style: TextStyle(
+                  fontSize: 16,
+                  fontWeight: FontWeight.bold,
+                ),
               ),
             ),
           ],

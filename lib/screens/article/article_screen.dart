@@ -16,7 +16,7 @@ class _ArticleScreenState extends State<ArticleScreen> {
     return Scaffold(
       body: Column(
         children: [
-          Container(
+          SizedBox(
             height: 400,
             child: Stack(
               children: [
@@ -38,7 +38,7 @@ class _ArticleScreenState extends State<ArticleScreen> {
                             onPressed: () {
                               Get.back();
                             },
-                            icon: Icon(Icons.arrow_back, color: Colors.white),
+                            icon: const Icon(Icons.arrow_back, color: Colors.white),
                           ),
                         ),
                         Align(
@@ -47,12 +47,12 @@ class _ArticleScreenState extends State<ArticleScreen> {
                             children: [
                               IconButton(
                                 onPressed: () {},
-                                icon: Icon(Icons.bookmark_border_rounded,
+                                icon: const Icon(Icons.bookmark_border_rounded,
                                     color: Colors.white),
                               ),
                               IconButton(
                                 onPressed: () {},
-                                icon: Icon(Icons.share, color: Colors.white),
+                                icon: const Icon(Icons.share, color: Colors.white),
                               ),
                             ],
                           ),
@@ -72,17 +72,17 @@ class _ArticleScreenState extends State<ArticleScreen> {
                       children: [
                         Container(
                           padding:
-                              EdgeInsets.symmetric(vertical: 8, horizontal: 16),
-                          child: Text("US Election",
-                              style: TextStyle(
-                                color: Colors.white,
-                              )),
+                              const EdgeInsets.symmetric(vertical: 8, horizontal: 16),
                           decoration: BoxDecoration(
                               color: AppColor.purplePrimary,
                               borderRadius: BorderRadius.circular(16)),
+                          child: const Text("US Election",
+                              style: TextStyle(
+                                color: Colors.white,
+                              )),
                         ),
-                        Padding(
-                          padding: const EdgeInsets.symmetric(vertical: 12),
+                        const Padding(
+                          padding: EdgeInsets.symmetric(vertical: 12),
                           child: Text(
                             "The latest situation in the presidential election",
                             style: TextStyle(
@@ -97,8 +97,8 @@ class _ArticleScreenState extends State<ArticleScreen> {
                             CircleAvatar(
                               child: Image.asset("assets/images/person.png"),
                             ),
-                            Padding(
-                              padding: const EdgeInsets.all(8.0),
+                            const Padding(
+                              padding: EdgeInsets.all(8.0),
                               child: Column(
                                 mainAxisAlignment: MainAxisAlignment.start,
                                 children: [
@@ -129,9 +129,9 @@ class _ArticleScreenState extends State<ArticleScreen> {
               ],
             ),
           ),
-          Expanded(
+          const Expanded(
             child: Padding(
-              padding: const EdgeInsets.only(left: 20, right: 20, top: 20),
+              padding: EdgeInsets.only(left: 20, right: 20, top: 20),
               child: SingleChildScrollView(
                 physics: BouncingScrollPhysics(
                     parent: AlwaysScrollableScrollPhysics()),
@@ -139,7 +139,7 @@ class _ArticleScreenState extends State<ArticleScreen> {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Padding(
-                      padding: const EdgeInsets.symmetric(vertical: 8.0),
+                      padding: EdgeInsets.symmetric(vertical: 8.0),
                       child: Text(
                         "Results",
                         style: TextStyle(

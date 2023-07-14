@@ -18,8 +18,8 @@ class _SplashScreenState extends State<SplashScreen> {
   @override
   void initState() {
     super.initState();
-    timer = Timer.periodic(Duration(seconds: 3), (timer) {
-      Get.off(() => OnboardingScreen());
+    timer = Timer.periodic(const Duration(seconds: 3), (timer) {
+      Get.off(() => const OnboardingScreen());
       timer.cancel();
     });
   }
@@ -37,8 +37,8 @@ class _SplashScreenState extends State<SplashScreen> {
               child:
                   Image.asset('assets/icons/logo.png', height: 48, width: 48),
             ),
-            Padding(
-              padding: const EdgeInsets.all(8.0),
+            const Padding(
+              padding: EdgeInsets.all(8.0),
               child: Text(
                 "Nuntium",
                 style: TextStyle(

@@ -24,15 +24,15 @@ class _ProfilePageState extends State<ProfilePage> {
         padding: const EdgeInsets.symmetric(horizontal: 20),
         child: SingleChildScrollView(
           physics:
-              BouncingScrollPhysics(parent: AlwaysScrollableScrollPhysics()),
+              const BouncingScrollPhysics(parent: AlwaysScrollableScrollPhysics()),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              SizedBox(
+              const SizedBox(
                 height: 72,
               ),
-              Padding(
-                padding: const EdgeInsets.symmetric(vertical: 8.0),
+              const Padding(
+                padding: EdgeInsets.symmetric(vertical: 8.0),
                 child: Text(
                   "Profile",
                   style: TextStyle(
@@ -41,15 +41,15 @@ class _ProfilePageState extends State<ProfilePage> {
                       color: AppColor.blackPrimary),
                 ),
               ),
-              SizedBox(
+              const SizedBox(
                 height: 48,
               ),
               Row(
                 children: [
                   Image.asset("assets/images/person.png",
                       width: 72, height: 72),
-                  Padding(
-                    padding: const EdgeInsets.symmetric(horizontal: 16),
+                  const Padding(
+                    padding: EdgeInsets.symmetric(horizontal: 16),
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
@@ -70,7 +70,7 @@ class _ProfilePageState extends State<ProfilePage> {
                   ),
                 ],
               ),
-              SizedBox(
+              const SizedBox(
                 height: 24,
               ),
               Container(
@@ -80,12 +80,12 @@ class _ProfilePageState extends State<ProfilePage> {
                   color: AppColor.greyLighter,
                   borderRadius: BorderRadius.circular(12),
                 ),
-                padding: EdgeInsets.all(16),
-                margin: EdgeInsets.symmetric(vertical: 8),
+                padding: const EdgeInsets.all(16),
+                margin: const EdgeInsets.symmetric(vertical: 8),
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    Text(
+                    const Text(
                       "Notifications",
                       style: TextStyle(
                         fontWeight: FontWeight.w600,
@@ -105,7 +105,7 @@ class _ProfilePageState extends State<ProfilePage> {
               ),
               InkWell(
                 onTap: () {
-                  Get.to(() => LanguageScreen());
+                  Get.to(() => const LanguageScreen());
                 },
                 child: Container(
                   width: size.width,
@@ -114,9 +114,9 @@ class _ProfilePageState extends State<ProfilePage> {
                     color: AppColor.greyLighter,
                     borderRadius: BorderRadius.circular(12),
                   ),
-                  padding: EdgeInsets.all(16),
-                  margin: EdgeInsets.symmetric(vertical: 8),
-                  child: Row(
+                  padding: const EdgeInsets.all(16),
+                  margin: const EdgeInsets.symmetric(vertical: 8),
+                  child: const Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
                       Text(
@@ -134,7 +134,7 @@ class _ProfilePageState extends State<ProfilePage> {
               ),
               InkWell(
                 onTap: () {
-                  Get.to(() => ChangePasswordScreen());
+                  Get.to(() => const ChangePasswordScreen());
                 },
                 child: Container(
                   width: size.width,
@@ -143,9 +143,9 @@ class _ProfilePageState extends State<ProfilePage> {
                     color: AppColor.greyLighter,
                     borderRadius: BorderRadius.circular(12),
                   ),
-                  padding: EdgeInsets.all(16),
-                  margin: EdgeInsets.symmetric(vertical: 8),
-                  child: Row(
+                  padding: const EdgeInsets.all(16),
+                  margin: const EdgeInsets.symmetric(vertical: 8),
+                  child: const Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
                       Text(
@@ -161,7 +161,7 @@ class _ProfilePageState extends State<ProfilePage> {
                   ),
                 ),
               ),
-              SizedBox(
+              const SizedBox(
                 height: 20,
               ),
               Container(
@@ -171,9 +171,9 @@ class _ProfilePageState extends State<ProfilePage> {
                   color: AppColor.greyLighter,
                   borderRadius: BorderRadius.circular(12),
                 ),
-                padding: EdgeInsets.all(16),
-                margin: EdgeInsets.symmetric(vertical: 8),
-                child: Row(
+                padding: const EdgeInsets.all(16),
+                margin: const EdgeInsets.symmetric(vertical: 8),
+                child: const Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     Text(
@@ -190,7 +190,7 @@ class _ProfilePageState extends State<ProfilePage> {
               ),
               InkWell(
                 onTap: () {
-                  Get.to(() => TermsConditions());
+                  Get.to(() => const TermsConditions());
                 },
                 child: Container(
                   width: size.width,
@@ -199,9 +199,9 @@ class _ProfilePageState extends State<ProfilePage> {
                     color: AppColor.greyLighter,
                     borderRadius: BorderRadius.circular(12),
                   ),
-                  padding: EdgeInsets.all(16),
-                  margin: EdgeInsets.symmetric(vertical: 8),
-                  child: Row(
+                  padding: const EdgeInsets.all(16),
+                  margin: const EdgeInsets.symmetric(vertical: 8),
+                  child: const Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
                       Text(
@@ -217,7 +217,7 @@ class _ProfilePageState extends State<ProfilePage> {
                   ),
                 ),
               ),
-              SizedBox(
+              const SizedBox(
                 height: 20,
               ),
               Container(
@@ -227,9 +227,9 @@ class _ProfilePageState extends State<ProfilePage> {
                   color: AppColor.greyLighter,
                   borderRadius: BorderRadius.circular(12),
                 ),
-                padding: EdgeInsets.all(16),
-                margin: EdgeInsets.symmetric(vertical: 8),
-                child: Row(
+                padding: const EdgeInsets.all(16),
+                margin: const EdgeInsets.symmetric(vertical: 8),
+                child: const Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     Text(

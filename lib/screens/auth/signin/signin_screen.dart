@@ -24,11 +24,11 @@ class _SignInScreenState extends State<SignInScreen> {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            SizedBox(
+            const SizedBox(
               height: 72,
             ),
-            Padding(
-              padding: const EdgeInsets.symmetric(vertical: 8.0),
+            const Padding(
+              padding: EdgeInsets.symmetric(vertical: 8.0),
               child: Text(
                 "Welcome Back 👋",
                 style: TextStyle(
@@ -37,7 +37,7 @@ class _SignInScreenState extends State<SignInScreen> {
                     color: AppColor.blackPrimary),
               ),
             ),
-            Text(
+            const Text(
               "I am happy to see you again. You can continue where you left off by logging in",
               style: TextStyle(
                 fontSize: 16,
@@ -45,16 +45,16 @@ class _SignInScreenState extends State<SignInScreen> {
                 color: AppColor.greyPrimary,
               ),
             ),
-            SizedBox(height: 24),
+            const SizedBox(height: 24),
             Container(
               height: 56,
               width: size.width,
-              margin: EdgeInsets.symmetric(vertical: 8),
-              padding: EdgeInsets.symmetric(vertical: 16, horizontal: 10),
+              margin: const EdgeInsets.symmetric(vertical: 8),
+              padding: const EdgeInsets.symmetric(vertical: 16, horizontal: 10),
               decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(12),
                   color: AppColor.greyLighter),
-              child: TextField(
+              child: const TextField(
                 decoration: InputDecoration(
                     border: InputBorder.none,
                     hintText: 'Email Adress',
@@ -65,12 +65,12 @@ class _SignInScreenState extends State<SignInScreen> {
             Container(
               height: 56,
               width: size.width,
-              margin: EdgeInsets.symmetric(vertical: 8),
-              padding: EdgeInsets.symmetric(vertical: 16, horizontal: 10),
+              margin: const EdgeInsets.symmetric(vertical: 8),
+              padding: const EdgeInsets.symmetric(vertical: 16, horizontal: 10),
               decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(12),
                   color: AppColor.greyLighter),
-              child: TextField(
+              child: const TextField(
                 decoration: InputDecoration(
                   border: InputBorder.none,
                   prefixIcon: Icon(Icons.lock_outline_rounded),
@@ -83,22 +83,15 @@ class _SignInScreenState extends State<SignInScreen> {
               alignment: Alignment.centerRight,
               child: TextButton(
                 onPressed: () {
-                  Get.to(() => ForgotPasswordScreen());
+                  Get.to(() => const ForgotPasswordScreen());
                 },
-                child: Text("Forgot Password?"),
+                child: const Text("Forgot Password?"),
               ),
             ),
             ElevatedButton(
               onPressed: () {
-                Get.to(()=>HomeScreen());
+                Get.to(()=>const HomeScreen());
               },
-              child: Text(
-                "Sign In",
-                style: TextStyle(
-                  fontSize: 16,
-                  fontWeight: FontWeight.bold,
-                ),
-              ),
               style: ElevatedButton.styleFrom(
                 fixedSize: Size(size.width * 0.9, 50),
                 shape: RoundedRectangleBorder(
@@ -106,11 +99,18 @@ class _SignInScreenState extends State<SignInScreen> {
                 ),
                 backgroundColor: AppColor.purplePrimary,
               ),
+              child: const Text(
+                "Sign In",
+                style: TextStyle(
+                  fontSize: 16,
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
             ),
-            Align(
+            const Align(
               alignment: Alignment.center,
               child: Padding(
-                padding: const EdgeInsets.symmetric(vertical: 48),
+                padding: EdgeInsets.symmetric(vertical: 48),
                 child: Text(
                   "or",
                   style: TextStyle(
@@ -135,10 +135,10 @@ class _SignInScreenState extends State<SignInScreen> {
                       width: 30,
                     ),
                   ),
-                  SizedBox(
+                  const SizedBox(
                     width: 50,
                   ),
-                  Text(
+                  const Text(
                     "Sign In with Google",
                     style:
                         TextStyle(fontSize: 20, color: AppColor.blackPrimary),
@@ -146,7 +146,7 @@ class _SignInScreenState extends State<SignInScreen> {
                 ],
               ),
             ),
-            SizedBox(
+            const SizedBox(
               height: 16,
             ),
             Container(
@@ -164,10 +164,10 @@ class _SignInScreenState extends State<SignInScreen> {
                       width: 30,
                     ),
                   ),
-                  SizedBox(
+                  const SizedBox(
                     width: 50,
                   ),
-                  Text(
+                  const Text(
                     "Sign In with Facebook",
                     style:
                         TextStyle(fontSize: 20, color: AppColor.blackPrimary),
@@ -175,17 +175,17 @@ class _SignInScreenState extends State<SignInScreen> {
                 ],
               ),
             ),
-            Spacer(),
+            const Spacer(),
             Padding(
               padding: const EdgeInsets.symmetric(vertical: 32),
               child: Align(
                 alignment: Alignment.center,
                 child: InkWell(
                   onTap: () {
-                    Get.to(() => SignUpScreen());
+                    Get.to(() => const SignUpScreen());
                   },
                   child: RichText(
-                    text: TextSpan(
+                    text: const TextSpan(
                         text: "Don't have an account? ",
                         style: TextStyle(
                             fontWeight: FontWeight.w600,

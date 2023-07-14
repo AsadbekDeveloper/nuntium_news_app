@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:nuntium_news/cubit/news_cubit.dart';
+import 'package:nuntium_news/model/news.dart';
 
 import '../../../constants.dart';
 import '../../components/bookmark_item.dart';
@@ -13,17 +16,16 @@ class BookmarkPage extends StatefulWidget {
 class _BookmarkPageState extends State<BookmarkPage> {
   @override
   Widget build(BuildContext context) {
-    Size size = MediaQuery.of(context).size;
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 20),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          SizedBox(
+          const SizedBox(
             height: 72,
           ),
-          Padding(
-            padding: const EdgeInsets.symmetric(vertical: 8.0),
+          const Padding(
+            padding: EdgeInsets.symmetric(vertical: 8.0),
             child: Text(
               "Bookmarks",
               style: TextStyle(
@@ -32,7 +34,7 @@ class _BookmarkPageState extends State<BookmarkPage> {
                   color: AppColor.blackPrimary),
             ),
           ),
-          Text(
+          const Text(
             "Saved articles to the library",
             style: TextStyle(
               fontSize: 16,
@@ -40,19 +42,25 @@ class _BookmarkPageState extends State<BookmarkPage> {
               color: AppColor.greyPrimary,
             ),
           ),
-          SizedBox(height: 24),
+          const SizedBox(height: 24),
           Expanded(
-            child: ListView.builder(
-              shrinkWrap: true,
-              itemCount: 10,
-              physics: BouncingScrollPhysics(parent: AlwaysScrollableScrollPhysics()),
-              padding: EdgeInsets.all(0),
-              itemBuilder: (context, index) {
-                return BookmarkItem(size: size);
+            child: BlocBuilder<NewsCubit, List<NewsModel>>(
+              builder: (context, state) {
+                return ListView.builder(
+                  shrinkWrap: true,
+                  itemCount: state.length,
+                  physics: const BouncingScrollPhysics(
+                      parent: AlwaysScrollableScrollPhysics()),
+                  padding: const EdgeInsets.all(0),
+                  itemBuilder: (context, index) {
+                    return BookmarkItem(
+                      news: state[index],
+                    );
+                  },
+                );
               },
             ),
           ),
-
         ],
       ),
     );

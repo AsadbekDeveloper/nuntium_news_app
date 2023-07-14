@@ -29,11 +29,11 @@ class _VerificationScreenState extends State<VerificationScreen> {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            SizedBox(
+            const SizedBox(
               height: 72,
             ),
-            Padding(
-              padding: const EdgeInsets.symmetric(vertical: 8.0),
+            const Padding(
+              padding: EdgeInsets.symmetric(vertical: 8.0),
               child: Text(
                 "Forgot Password 🤔",
                 style: TextStyle(
@@ -42,7 +42,7 @@ class _VerificationScreenState extends State<VerificationScreen> {
                     color: AppColor.blackPrimary),
               ),
             ),
-            Text(
+            const Text(
               "We need your email adress so we can send you the password reset code.",
               style: TextStyle(
                 fontSize: 16,
@@ -50,15 +50,15 @@ class _VerificationScreenState extends State<VerificationScreen> {
                 color: AppColor.greyPrimary,
               ),
             ),
-            SizedBox(height: 24),
+            const SizedBox(height: 24),
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceAround,
               children: [
                 Container(
                   height: 56,
                   width: 56,
-                  margin: EdgeInsets.symmetric(vertical: 8),
-                  padding: EdgeInsets.all(16),
+                  margin: const EdgeInsets.symmetric(vertical: 8),
+                  padding: const EdgeInsets.all(16),
                   decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(12),
                       color: AppColor.greyLighter),
@@ -71,7 +71,7 @@ class _VerificationScreenState extends State<VerificationScreen> {
                         FocusScope.of(context).nextFocus();
                       }
                     },
-                    decoration: InputDecoration(
+                    decoration: const InputDecoration(
                         border: InputBorder.none,
                         hintText: '-',
                         counterText: '',
@@ -81,8 +81,8 @@ class _VerificationScreenState extends State<VerificationScreen> {
                 Container(
                   height: 56,
                   width: 56,
-                  margin: EdgeInsets.symmetric(vertical: 8),
-                  padding: EdgeInsets.all(16),
+                  margin: const EdgeInsets.symmetric(vertical: 8),
+                  padding: const EdgeInsets.all(16),
                   decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(12),
                       color: AppColor.greyLighter),
@@ -95,7 +95,7 @@ class _VerificationScreenState extends State<VerificationScreen> {
                       }
                     },
                     textAlign: TextAlign.center,
-                    decoration: InputDecoration(
+                    decoration: const InputDecoration(
                         border: InputBorder.none,
                         hintText: '-',
                         counterText: '',
@@ -105,8 +105,8 @@ class _VerificationScreenState extends State<VerificationScreen> {
                 Container(
                   height: 56,
                   width: 56,
-                  margin: EdgeInsets.symmetric(vertical: 8),
-                  padding: EdgeInsets.all(16),
+                  margin: const EdgeInsets.symmetric(vertical: 8),
+                  padding: const EdgeInsets.all(16),
                   decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(12),
                       color: AppColor.greyLighter),
@@ -119,7 +119,7 @@ class _VerificationScreenState extends State<VerificationScreen> {
                       }
                     },
                     textAlign: TextAlign.center,
-                    decoration: InputDecoration(
+                    decoration: const InputDecoration(
                         border: InputBorder.none,
                         hintText: '-',
                         counterText: '',
@@ -129,8 +129,8 @@ class _VerificationScreenState extends State<VerificationScreen> {
                 Container(
                   height: 56,
                   width: 56,
-                  margin: EdgeInsets.symmetric(vertical: 8),
-                  padding: EdgeInsets.all(16),
+                  margin: const EdgeInsets.symmetric(vertical: 8),
+                  padding: const EdgeInsets.all(16),
                   decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(12),
                       color: AppColor.greyLighter),
@@ -143,7 +143,7 @@ class _VerificationScreenState extends State<VerificationScreen> {
                       }
                     },
                     textAlign: TextAlign.center,
-                    decoration: InputDecoration(
+                    decoration: const InputDecoration(
                         border: InputBorder.none,
                         hintText: '-',
                         counterText: '',
@@ -152,20 +152,13 @@ class _VerificationScreenState extends State<VerificationScreen> {
                 ),
               ],
             ),
-            SizedBox(
+            const SizedBox(
               height: 16,
             ),
             ElevatedButton(
               onPressed: () {
-                Get.to(() => NewPasswordScreen());
+                Get.to(() => const NewPasswordScreen());
               },
-              child: Text(
-                "Confirm",
-                style: TextStyle(
-                  fontSize: 16,
-                  fontWeight: FontWeight.bold,
-                ),
-              ),
               style: ElevatedButton.styleFrom(
                 fixedSize: Size(size.width * 0.9, 50),
                 shape: RoundedRectangleBorder(
@@ -173,14 +166,21 @@ class _VerificationScreenState extends State<VerificationScreen> {
                 ),
                 backgroundColor: AppColor.purplePrimary,
               ),
+              child: const Text(
+                "Confirm",
+                style: TextStyle(
+                  fontSize: 16,
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
             ),
-            Spacer(),
+            const Spacer(),
             Padding(
               padding: const EdgeInsets.symmetric(vertical: 32),
               child: Align(
                 alignment: Alignment.center,
                 child: RichText(
-                  text: TextSpan(
+                  text: const TextSpan(
                       text: "Didn’t receive an email? ",
                       style: TextStyle(
                           fontWeight: FontWeight.w600,

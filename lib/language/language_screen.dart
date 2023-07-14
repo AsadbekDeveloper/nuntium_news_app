@@ -25,7 +25,7 @@ class _LanguageScreenState extends State<LanguageScreen> {
       backgroundColor: Colors.white,
       appBar: AppBar(
           title:
-              Text("Language", style: TextStyle(color: AppColor.blackPrimary)),
+              const Text("Language", style: TextStyle(color: AppColor.blackPrimary)),
           centerTitle: true),
       body: Padding(
         padding: const EdgeInsets.all(20),
@@ -41,8 +41,8 @@ class _LanguageScreenState extends State<LanguageScreen> {
                     : AppColor.greyLighter,
                 borderRadius: BorderRadius.circular(12),
               ),
-              padding: EdgeInsets.all(16),
-              margin: EdgeInsets.symmetric(vertical: 8),
+              padding: const EdgeInsets.all(16),
+              margin: const EdgeInsets.symmetric(vertical: 8),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
@@ -56,14 +56,14 @@ class _LanguageScreenState extends State<LanguageScreen> {
                     ),
                   ),
                   enabled == index
-                      ? Icon(Icons.check, color: Colors.white, size: 20)
+                      ? const Icon(Icons.check, color: Colors.white, size: 20)
                       : Container(),
                 ],
               ),
             ),
           ),
           itemCount: languages.length,
-          physics: NeverScrollableScrollPhysics(),
+          physics: const NeverScrollableScrollPhysics(),
           shrinkWrap: true,
         ),
       ),

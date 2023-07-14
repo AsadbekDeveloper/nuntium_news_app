@@ -22,11 +22,11 @@ class _NewPasswordScreenState extends State<NewPasswordScreen> {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            SizedBox(
+            const SizedBox(
               height: 72,
             ),
-            Padding(
-              padding: const EdgeInsets.symmetric(vertical: 8.0),
+            const Padding(
+              padding: EdgeInsets.symmetric(vertical: 8.0),
               child: Text(
                 "Create New Password 🔒",
                 style: TextStyle(
@@ -35,7 +35,7 @@ class _NewPasswordScreenState extends State<NewPasswordScreen> {
                     color: AppColor.blackPrimary),
               ),
             ),
-            Text(
+            const Text(
               "You can create a new password, please dont forget it too.",
               style: TextStyle(
                 fontSize: 16,
@@ -43,16 +43,16 @@ class _NewPasswordScreenState extends State<NewPasswordScreen> {
                 color: AppColor.greyPrimary,
               ),
             ),
-            SizedBox(height: 24),
+            const SizedBox(height: 24),
             Container(
               height: 56,
               width: size.width,
-              margin: EdgeInsets.symmetric(vertical: 8),
-              padding: EdgeInsets.symmetric(vertical: 16, horizontal: 10),
+              margin: const EdgeInsets.symmetric(vertical: 8),
+              padding: const EdgeInsets.symmetric(vertical: 16, horizontal: 10),
               decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(12),
                   color: AppColor.greyLighter),
-              child: TextField(
+              child: const TextField(
                 decoration: InputDecoration(
                     border: InputBorder.none,
                     hintText: 'New Password',
@@ -63,12 +63,12 @@ class _NewPasswordScreenState extends State<NewPasswordScreen> {
             Container(
               height: 56,
               width: size.width,
-              margin: EdgeInsets.symmetric(vertical: 8),
-              padding: EdgeInsets.symmetric(vertical: 16, horizontal: 10),
+              margin: const EdgeInsets.symmetric(vertical: 8),
+              padding: const EdgeInsets.symmetric(vertical: 16, horizontal: 10),
               decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(12),
                   color: AppColor.greyLighter),
-              child: TextField(
+              child: const TextField(
                 decoration: InputDecoration(
                     border: InputBorder.none,
                     hintText: 'Repeat New Password',
@@ -76,20 +76,13 @@ class _NewPasswordScreenState extends State<NewPasswordScreen> {
                     prefixIcon: Icon(Icons.lock_outline_rounded)),
               ),
             ),
-            SizedBox(
+            const SizedBox(
               height: 16,
             ),
             ElevatedButton(
               onPressed: () {
-                Get.offAll(() => SignInScreen());
+                Get.offAll(() => const SignInScreen());
               },
-              child: Text(
-                "Confirm",
-                style: TextStyle(
-                  fontSize: 16,
-                  fontWeight: FontWeight.bold,
-                ),
-              ),
               style: ElevatedButton.styleFrom(
                 fixedSize: Size(size.width * 0.9, 50),
                 shape: RoundedRectangleBorder(
@@ -97,14 +90,21 @@ class _NewPasswordScreenState extends State<NewPasswordScreen> {
                 ),
                 backgroundColor: AppColor.purplePrimary,
               ),
+              child: const Text(
+                "Confirm",
+                style: TextStyle(
+                  fontSize: 16,
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
             ),
-            Spacer(),
+            const Spacer(),
             Padding(
               padding: const EdgeInsets.symmetric(vertical: 32),
               child: Align(
                 alignment: Alignment.center,
                 child: RichText(
-                  text: TextSpan(
+                  text: const TextSpan(
                     text: "Didn’t receive an email? ",
                     style: TextStyle(
                         fontWeight: FontWeight.w600,

@@ -22,11 +22,11 @@ class _SignUpScreenState extends State<SignUpScreen> {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            SizedBox(
+            const SizedBox(
               height: 72,
             ),
-            Padding(
-              padding: const EdgeInsets.symmetric(vertical: 8.0),
+            const Padding(
+              padding: EdgeInsets.symmetric(vertical: 8.0),
               child: Text(
                 "Welcome to Nuntium 👋",
                 style: TextStyle(
@@ -35,7 +35,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                     color: AppColor.blackPrimary),
               ),
             ),
-            Text(
+            const Text(
               "Hello, I guess you are new around here. You can start using the application after sign up.",
               style: TextStyle(
                 fontSize: 16,
@@ -43,16 +43,16 @@ class _SignUpScreenState extends State<SignUpScreen> {
                 color: AppColor.greyPrimary,
               ),
             ),
-            SizedBox(height: 24),
+            const SizedBox(height: 24),
             Container(
               height: 56,
               width: size.width,
-              margin: EdgeInsets.symmetric(vertical: 8),
-              padding: EdgeInsets.symmetric(vertical: 16, horizontal: 10),
+              margin: const EdgeInsets.symmetric(vertical: 8),
+              padding: const EdgeInsets.symmetric(vertical: 16, horizontal: 10),
               decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(12),
                   color: AppColor.greyLighter),
-              child: TextField(
+              child: const TextField(
                 decoration: InputDecoration(
                     border: InputBorder.none,
                     hintText: 'Username',
@@ -63,12 +63,12 @@ class _SignUpScreenState extends State<SignUpScreen> {
             Container(
               height: 56,
               width: size.width,
-              margin: EdgeInsets.symmetric(vertical: 8),
-              padding: EdgeInsets.symmetric(vertical: 16, horizontal: 10),
+              margin: const EdgeInsets.symmetric(vertical: 8),
+              padding: const EdgeInsets.symmetric(vertical: 16, horizontal: 10),
               decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(12),
                   color: AppColor.greyLighter),
-              child: TextField(
+              child: const TextField(
                 decoration: InputDecoration(
                     border: InputBorder.none,
                     hintText: 'Email Adress',
@@ -79,12 +79,12 @@ class _SignUpScreenState extends State<SignUpScreen> {
             Container(
               height: 56,
               width: size.width,
-              margin: EdgeInsets.symmetric(vertical: 8),
-              padding: EdgeInsets.symmetric(vertical: 16, horizontal: 10),
+              margin: const EdgeInsets.symmetric(vertical: 8),
+              padding: const EdgeInsets.symmetric(vertical: 16, horizontal: 10),
               decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(12),
                   color: AppColor.greyLighter),
-              child: TextField(
+              child: const TextField(
                 decoration: InputDecoration(
                     border: InputBorder.none,
                     hintText: 'Password',
@@ -95,12 +95,12 @@ class _SignUpScreenState extends State<SignUpScreen> {
             Container(
               height: 56,
               width: size.width,
-              margin: EdgeInsets.symmetric(vertical: 8),
-              padding: EdgeInsets.symmetric(vertical: 16, horizontal: 10),
+              margin: const EdgeInsets.symmetric(vertical: 8),
+              padding: const EdgeInsets.symmetric(vertical: 16, horizontal: 10),
               decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(12),
                   color: AppColor.greyLighter),
-              child: TextField(
+              child: const TextField(
                 decoration: InputDecoration(
                     border: InputBorder.none,
                     hintText: 'Repeat Password',
@@ -109,18 +109,11 @@ class _SignUpScreenState extends State<SignUpScreen> {
               ),
             ),
 
-            SizedBox(height: 8),
+            const SizedBox(height: 8),
             ElevatedButton(
               onPressed: () {
-                Get.to(()=>YourFavoriteScreen());
+                Get.to(()=>const YourFavoriteScreen());
               },
-              child: Text(
-                "Sign Up",
-                style: TextStyle(
-                  fontSize: 16,
-                  fontWeight: FontWeight.bold,
-                ),
-              ),
               style: ElevatedButton.styleFrom(
                 fixedSize: Size(size.width * 0.9, 50),
                 shape: RoundedRectangleBorder(
@@ -128,14 +121,21 @@ class _SignUpScreenState extends State<SignUpScreen> {
                 ),
                 backgroundColor: AppColor.purplePrimary,
               ),
+              child: const Text(
+                "Sign Up",
+                style: TextStyle(
+                  fontSize: 16,
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
             ),
-            Spacer(),
+            const Spacer(),
             Padding(
               padding: const EdgeInsets.symmetric(vertical: 32),
               child: Align(
                 alignment: Alignment.center,
                 child: RichText(
-                  text: TextSpan(
+                  text: const TextSpan(
                       text: "Already have an account? ",
                       style: TextStyle(
                           fontWeight: FontWeight.w600,

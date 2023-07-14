@@ -32,11 +32,11 @@ class _CategoriesPageState extends State<CategoriesPage> {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          SizedBox(
+          const SizedBox(
             height: 72,
           ),
-          Padding(
-            padding: const EdgeInsets.symmetric(vertical: 8.0),
+          const Padding(
+            padding: EdgeInsets.symmetric(vertical: 8.0),
             child: Text(
               "Categories",
               style: TextStyle(
@@ -45,7 +45,7 @@ class _CategoriesPageState extends State<CategoriesPage> {
                   color: AppColor.blackPrimary),
             ),
           ),
-          Text(
+          const Text(
             "Thousands of articles in each category",
             style: TextStyle(
               fontSize: 16,
@@ -53,13 +53,13 @@ class _CategoriesPageState extends State<CategoriesPage> {
               color: AppColor.greyPrimary,
             ),
           ),
-          SizedBox(height: 24),
+          const SizedBox(height: 24),
           GridView.builder(
             shrinkWrap: true,
-            gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+            gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
                 crossAxisCount: 2, mainAxisExtent: 90),
             itemCount: categories.length,
-            physics: BouncingScrollPhysics(
+            physics: const BouncingScrollPhysics(
                 parent: AlwaysScrollableScrollPhysics(),
                 decelerationRate: ScrollDecelerationRate.normal),
             itemBuilder: (context, index) {
@@ -67,15 +67,15 @@ class _CategoriesPageState extends State<CategoriesPage> {
                 onTap: () {},
                 child: Container(
                   alignment: Alignment.center,
-                  margin: EdgeInsets.symmetric(vertical: 8, horizontal: 4),
-                  padding: EdgeInsets.symmetric(vertical: 16, horizontal: 10),
+                  margin: const EdgeInsets.symmetric(vertical: 8, horizontal: 4),
+                  padding: const EdgeInsets.symmetric(vertical: 16, horizontal: 10),
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(12),
                     border: Border.all(color: AppColor.greyLight),
                   ),
                   child: Text(
                     categories[index],
-                    style: TextStyle(
+                    style: const TextStyle(
                         fontSize: 16,
                         fontWeight: FontWeight.w600,
                         color: AppColor.greyDark),
@@ -84,7 +84,7 @@ class _CategoriesPageState extends State<CategoriesPage> {
               );
             },
           ),
-          SizedBox(
+          const SizedBox(
             height: 10,
           ),
         ],

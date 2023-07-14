@@ -19,23 +19,23 @@ class _ChangePasswordScreenState extends State<ChangePasswordScreen> {
       backgroundColor: Colors.white,
       appBar: AppBar(
           title:
-          Text("Change Password", style: TextStyle(color: AppColor.blackPrimary)),
+          const Text("Change Password", style: TextStyle(color: AppColor.blackPrimary)),
           centerTitle: true),
       body: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 20),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            SizedBox(height: 10,),
+            const SizedBox(height: 10,),
             Container(
               height: 56,
               width: size.width,
-              margin: EdgeInsets.symmetric(vertical: 8),
-              padding: EdgeInsets.symmetric(vertical: 16, horizontal: 10),
+              margin: const EdgeInsets.symmetric(vertical: 8),
+              padding: const EdgeInsets.symmetric(vertical: 16, horizontal: 10),
               decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(12),
                   color: AppColor.greyLighter),
-              child: TextField(
+              child: const TextField(
                 decoration: InputDecoration(
                     border: InputBorder.none,
                     hintText: 'Current Password',
@@ -46,12 +46,12 @@ class _ChangePasswordScreenState extends State<ChangePasswordScreen> {
             Container(
               height: 56,
               width: size.width,
-              margin: EdgeInsets.symmetric(vertical: 8),
-              padding: EdgeInsets.symmetric(vertical: 16, horizontal: 10),
+              margin: const EdgeInsets.symmetric(vertical: 8),
+              padding: const EdgeInsets.symmetric(vertical: 16, horizontal: 10),
               decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(12),
                   color: AppColor.greyLighter),
-              child: TextField(
+              child: const TextField(
                 decoration: InputDecoration(
                     border: InputBorder.none,
                     hintText: 'New Password',
@@ -62,12 +62,12 @@ class _ChangePasswordScreenState extends State<ChangePasswordScreen> {
             Container(
               height: 56,
               width: size.width,
-              margin: EdgeInsets.symmetric(vertical: 8),
-              padding: EdgeInsets.symmetric(vertical: 16, horizontal: 10),
+              margin: const EdgeInsets.symmetric(vertical: 8),
+              padding: const EdgeInsets.symmetric(vertical: 16, horizontal: 10),
               decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(12),
                   color: AppColor.greyLighter),
-              child: TextField(
+              child: const TextField(
                 decoration: InputDecoration(
                     border: InputBorder.none,
                     hintText: 'Repeat New Password',
@@ -75,26 +75,26 @@ class _ChangePasswordScreenState extends State<ChangePasswordScreen> {
                     prefixIcon: Icon(Icons.lock_outline_rounded)),
               ),
             ),
-            SizedBox(
+            const SizedBox(
               height: 16,
             ),
             ElevatedButton(
               onPressed: () {
                 Get.back();
               },
-              child: Text(
-                "Change Password",
-                style: TextStyle(
-                  fontSize: 16,
-                  fontWeight: FontWeight.bold,
-                ),
-              ),
               style: ElevatedButton.styleFrom(
                 fixedSize: Size(size.width * 0.9, 50),
                 shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(12),
                 ),
                 backgroundColor: AppColor.purplePrimary,
+              ),
+              child: const Text(
+                "Change Password",
+                style: TextStyle(
+                  fontSize: 16,
+                  fontWeight: FontWeight.bold,
+                ),
               ),
             ),
           ],

@@ -1,3 +1,5 @@
+import 'dart:developer';
+
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -44,7 +46,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
     return Scaffold(
       body: Column(
         children: [
-          SizedBox(
+          const SizedBox(
             height: 120,
           ),
           CarouselSlider(
@@ -65,7 +67,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                   setState(() {
                     this.index = index;
                   });
-                  print(this.index);
+                  log(this.index.toString());
                 },
                 scrollDirection: Axis.horizontal,
               )),
@@ -74,7 +76,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
             child: AnimatedSmoothIndicator(
                 activeIndex: index,
                 count: pages.length,
-                effect: ExpandingDotsEffect(
+                effect: const ExpandingDotsEffect(
                     dotHeight: 8,
                     dotWidth: 8,
                     dotColor: AppColor.greyLighter,
@@ -84,29 +86,29 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
           ),
           Text(
             pages[index].name,
-            style: TextStyle(
+            style: const TextStyle(
                 fontSize: 24,
                 fontWeight: FontWeight.bold,
                 color: AppColor.blackPrimary),
           ),
           Padding(
-            padding: EdgeInsets.symmetric(vertical: 24, horizontal: 80),
+            padding: const EdgeInsets.symmetric(vertical: 24, horizontal: 80),
             child: Text(
               pages[index].desc,
               textAlign: TextAlign.center,
-              style: TextStyle(
+              style: const TextStyle(
                 fontSize: 16,
                 color: AppColor.greyPrimary,
               ),
             ),
           ),
-          Spacer(),
+          const Spacer(),
           Padding(
-            padding: EdgeInsets.only(bottom: 50),
+            padding: const EdgeInsets.only(bottom: 50),
             child: ElevatedButton(
               onPressed: () {
                 if (index == 2) {
-                  Get.off(() => SignInScreen());
+                  Get.off(() => const SignInScreen());
                 } else {
                   setState(() {
                     index++;
@@ -115,19 +117,19 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
 
                 }
               },
-              child: Text(
-                index != 2 ? "Next" : "Get Started",
-                style: TextStyle(
-                  fontSize: 16,
-                  fontWeight: FontWeight.bold,
-                ),
-              ),
               style: ElevatedButton.styleFrom(
                 fixedSize: Size(size.width * 0.9, 50),
                 shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(12),
                 ),
                 backgroundColor: AppColor.purplePrimary,
+              ),
+              child: Text(
+                index != 2 ? "Next" : "Get Started",
+                style: const TextStyle(
+                  fontSize: 16,
+                  fontWeight: FontWeight.bold,
+                ),
               ),
             ),
           )

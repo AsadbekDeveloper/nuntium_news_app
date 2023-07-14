@@ -23,11 +23,11 @@ class _ForgotPasswordScreenState extends State<ForgotPasswordScreen> {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            SizedBox(
+            const SizedBox(
               height: 72,
             ),
-            Padding(
-              padding: const EdgeInsets.symmetric(vertical: 8.0),
+            const Padding(
+              padding: EdgeInsets.symmetric(vertical: 8.0),
               child: Text(
                 "Verification Code ✅",
                 style: TextStyle(
@@ -36,7 +36,7 @@ class _ForgotPasswordScreenState extends State<ForgotPasswordScreen> {
                     color: AppColor.blackPrimary),
               ),
             ),
-            Text(
+            const Text(
               "You need to enter 4-digit code we send to your email adress.",
               style: TextStyle(
                 fontSize: 16,
@@ -44,16 +44,16 @@ class _ForgotPasswordScreenState extends State<ForgotPasswordScreen> {
                 color: AppColor.greyPrimary,
               ),
             ),
-            SizedBox(height: 24),
+            const SizedBox(height: 24),
             Container(
               height: 56,
               width: size.width,
-              margin: EdgeInsets.symmetric(vertical: 8),
-              padding: EdgeInsets.symmetric(vertical: 16, horizontal: 10),
+              margin: const EdgeInsets.symmetric(vertical: 8),
+              padding: const EdgeInsets.symmetric(vertical: 16, horizontal: 10),
               decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(12),
                   color: AppColor.greyLighter),
-              child: TextField(
+              child: const TextField(
                 decoration: InputDecoration(
                     border: InputBorder.none,
                     hintText: 'Email Adress',
@@ -61,20 +61,13 @@ class _ForgotPasswordScreenState extends State<ForgotPasswordScreen> {
                     prefixIcon: Icon(Icons.email_outlined)),
               ),
             ),
-            SizedBox(
+            const SizedBox(
               height: 16,
             ),
             ElevatedButton(
               onPressed: () {
-                Get.to(()=>VerificationScreen());
+                Get.to(()=>const VerificationScreen());
               },
-              child: Text(
-                "Next",
-                style: TextStyle(
-                  fontSize: 16,
-                  fontWeight: FontWeight.bold,
-                ),
-              ),
               style: ElevatedButton.styleFrom(
                 fixedSize: Size(size.width * 0.9, 50),
                 shape: RoundedRectangleBorder(
@@ -82,14 +75,21 @@ class _ForgotPasswordScreenState extends State<ForgotPasswordScreen> {
                 ),
                 backgroundColor: AppColor.purplePrimary,
               ),
+              child: const Text(
+                "Next",
+                style: TextStyle(
+                  fontSize: 16,
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
             ),
-            Spacer(),
+            const Spacer(),
             Padding(
               padding: const EdgeInsets.symmetric(vertical: 32),
               child: Align(
                 alignment: Alignment.center,
                 child: RichText(
-                  text: TextSpan(
+                  text: const TextSpan(
                       text: "Didn’t receive an email? ",
                       style: TextStyle(
                           fontWeight: FontWeight.w600,
