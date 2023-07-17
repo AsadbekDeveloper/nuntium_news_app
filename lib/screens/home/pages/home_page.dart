@@ -156,7 +156,11 @@ class _HomePageState extends State<HomePage>
                     scrollDirection: Axis.horizontal,
                     itemBuilder: (context, index) => InkWell(
                       onTap: () {
-                        Get.to(() => const ArticleScreen());
+                        Get.to(
+                          () => ArticleScreen(
+                            news: state[index],
+                          ),
+                        );
                       },
                       child: HomeHorizontalArticleContainer(
                         news: state[index],

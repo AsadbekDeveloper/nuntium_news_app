@@ -1,18 +1,20 @@
+// ignore_for_file: public_member_api_docs, sort_constructors_first
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+
 import 'package:nuntium_news/constants.dart';
+import 'package:nuntium_news/model/news.dart';
 
-class ArticleScreen extends StatefulWidget {
-  const ArticleScreen({super.key});
+class ArticleScreen extends StatelessWidget {
+  const ArticleScreen({
+    Key? key,
+    required this.news,
+  }) : super(key: key);
+  final NewsModel news;
 
-  @override
-  State<ArticleScreen> createState() => _ArticleScreenState();
-}
-
-class _ArticleScreenState extends State<ArticleScreen> {
   @override
   Widget build(BuildContext context) {
-    Size size = MediaQuery.of(context).size;
     return Scaffold(
       body: Column(
         children: [
@@ -20,11 +22,28 @@ class _ArticleScreenState extends State<ArticleScreen> {
             height: 400,
             child: Stack(
               children: [
-                Image.asset(
-                  "assets/images/election.png",
-                  width: size.width,
-                  height: 400,
-                  fit: BoxFit.fill,
+                CachedNetworkImage(
+                  progressIndicatorBuilder: (context, url, progress) => Center(
+                    child: CircularProgressIndicator(
+                      value: progress.progress,
+                    ),
+                  ),
+                  errorWidget: (context, url, error) => const Center(
+                    child: Icon(
+                      Icons.error,
+                    ),
+                  ),
+                  imageBuilder: (context, imageProvider) => Container(
+                    decoration: BoxDecoration(
+                      image: DecorationImage(
+                        image: imageProvider,
+                        fit: BoxFit.cover,
+                      ),
+                      borderRadius: BorderRadius.circular(12),
+                    ),
+                  ),
+                  imageUrl:
+                      news.image ?? 'https://unsplash.com/photos/6kA9FjqUxhM',
                 ),
                 SafeArea(
                   child: Padding(
@@ -38,7 +57,8 @@ class _ArticleScreenState extends State<ArticleScreen> {
                             onPressed: () {
                               Get.back();
                             },
-                            icon: const Icon(Icons.arrow_back, color: Colors.white),
+                            icon: const Icon(Icons.arrow_back,
+                                color: Colors.white),
                           ),
                         ),
                         Align(
@@ -52,7 +72,8 @@ class _ArticleScreenState extends State<ArticleScreen> {
                               ),
                               IconButton(
                                 onPressed: () {},
-                                icon: const Icon(Icons.share, color: Colors.white),
+                                icon: const Icon(Icons.share,
+                                    color: Colors.white),
                               ),
                             ],
                           ),
@@ -71,21 +92,21 @@ class _ArticleScreenState extends State<ArticleScreen> {
                       mainAxisSize: MainAxisSize.min,
                       children: [
                         Container(
-                          padding:
-                              const EdgeInsets.symmetric(vertical: 8, horizontal: 16),
+                          padding: const EdgeInsets.symmetric(
+                              vertical: 8, horizontal: 16),
                           decoration: BoxDecoration(
                               color: AppColor.purplePrimary,
                               borderRadius: BorderRadius.circular(16)),
-                          child: const Text("US Election",
-                              style: TextStyle(
+                          child: Text(news.author,
+                              style: const TextStyle(
                                 color: Colors.white,
                               )),
                         ),
-                        const Padding(
-                          padding: EdgeInsets.symmetric(vertical: 12),
+                        Padding(
+                          padding: const EdgeInsets.symmetric(vertical: 12),
                           child: Text(
-                            "The latest situation in the presidential election",
-                            style: TextStyle(
+                            news.title,
+                            style: const TextStyle(
                               color: Colors.white,
                               fontSize: 28,
                               fontWeight: FontWeight.w600,
@@ -97,20 +118,20 @@ class _ArticleScreenState extends State<ArticleScreen> {
                             CircleAvatar(
                               child: Image.asset("assets/images/person.png"),
                             ),
-                            const Padding(
-                              padding: EdgeInsets.all(8.0),
+                            Padding(
+                              padding: const EdgeInsets.all(8.0),
                               child: Column(
                                 mainAxisAlignment: MainAxisAlignment.start,
                                 children: [
                                   Text(
-                                    "John Doe",
-                                    style: TextStyle(
+                                    news.author,
+                                    style: const TextStyle(
                                       fontSize: 16,
                                       color: Colors.white,
                                       fontWeight: FontWeight.w600,
                                     ),
                                   ),
-                                  Text(
+                                  const Text(
                                     "Designer",
                                     style: TextStyle(
                                       fontSize: 16,
@@ -129,20 +150,20 @@ class _ArticleScreenState extends State<ArticleScreen> {
               ],
             ),
           ),
-          const Expanded(
+          Expanded(
             child: Padding(
-              padding: EdgeInsets.only(left: 20, right: 20, top: 20),
+              padding: const EdgeInsets.only(left: 20, right: 20, top: 20),
               child: SingleChildScrollView(
-                physics: BouncingScrollPhysics(
+                physics: const BouncingScrollPhysics(
                     parent: AlwaysScrollableScrollPhysics()),
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Padding(
-                      padding: EdgeInsets.symmetric(vertical: 8.0),
+                      padding: const EdgeInsets.symmetric(vertical: 8.0),
                       child: Text(
-                        "Results",
-                        style: TextStyle(
+                        news.description,
+                        style: const TextStyle(
                           color: AppColor.blackPrimary,
                           fontWeight: FontWeight.w600,
                           fontSize: 24,
@@ -150,8 +171,8 @@ class _ArticleScreenState extends State<ArticleScreen> {
                       ),
                     ),
                     Text(
-                      "Leads in individual states may change from one party to another as all the votes are counted. Select a state for detailed results, and select the Senate, House or Governor tabs to view those races.\n\nFor more detailed state results click on the States A-Z links at the bottom of this page. Results source: NEP/Edison via Reuters.\n\nLeads in individual states may change from one party to another as all the votes are counted. Select a state for detailed results, and select the Senate, House or Governor tabs to view those races.\n\nFor more detailed state results click on the States A-Z links at the bottom of this page. Results source: NEP/Edison via Reuters.",
-                      style: TextStyle(
+                      news.content,
+                      style: const TextStyle(
                         color: AppColor.greyDark,
                         fontWeight: FontWeight.w600,
                         fontSize: 20,
